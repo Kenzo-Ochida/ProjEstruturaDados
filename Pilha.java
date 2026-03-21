@@ -15,7 +15,12 @@ public class Pilha {
         return topo == criticos.length -1;
     }
 
+    //aleração caio no tratamento primeiro if
     public void push(Chamado critico){
+        if (critico == null) {
+        System.out.println("Chamado inválido");
+        return;
+        }
         if (isFull()){
             System.out.println("Críticos está cheio");
         } else {
@@ -23,12 +28,16 @@ public class Pilha {
         }
     }
 
+    //alteração caio para realmente remover da Pilha o primeiro do topo e retornar qual foi removido
     public Chamado pop(){
         if(isEmpty()){
             System.out.println("Críticos está vazio");
             return null;
         } else {
-            return criticos[topo --];
+            Chamado removido = criticos[topo];
+            criticos[topo] = null;
+            topo--;
+            return removido;
         }
     }
 
@@ -40,4 +49,10 @@ public class Pilha {
             return criticos[topo];
         }
     }
+    //alteração caio verificar o tamanho da lista
+    public int size(){
+        return topo +1;
+    }
+
+
 }
