@@ -50,7 +50,7 @@ public class Pilha {
         }
     }
     //alteração caio verificar o tamanho da lista
-    public int size(){
+    public int sizeElements(){
         return topo +1;
     }
 

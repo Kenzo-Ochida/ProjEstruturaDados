@@ -14,9 +14,11 @@ public class Fila{
     public boolean isEmpty(){
         return quantidade == 0;
     }
+
     public boolean isFull(){
         return quantidade == comuns.lenght;
     }
+
     public void enqueue(Chamado comum){
         if(comum == null){
             System.out.println("Chamado invalido");
@@ -26,7 +28,7 @@ public class Fila{
             System.out.println("Fila está cheia");
         } else{
             comuns[fim] = comum;
-            fim = (fim + 1) % comuns.lenght;
+            fim = (fim + 1) % comuns.length;
             quantidade++;
         }
     }
@@ -38,7 +40,7 @@ public class Fila{
         } else {
             Chamado removido = comuns[inicio];
             comuns[inicio] = null;
-            inicio = (inicio + 1) % comuns.lenght;
+            inicio = (inicio + 1) % comuns.length;
             quantidade --;
             return removido;
         }
