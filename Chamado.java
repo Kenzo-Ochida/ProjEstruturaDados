@@ -5,6 +5,14 @@ public class Chamado {
     private int nivelDeUrgencia;
     private String status;
 
+    public Chamado(int id, String bairro, String descricao, int nivelDeUrgencia, String status) {
+        this.id = id;
+        this.bairro = bairro;
+        this.descricao = descricao;
+        this.nivelDeUrgencia = nivelDeUrgencia;
+        this.status = status;
+    }
+
     public int getId() {
         return id;
     }
@@ -43,5 +51,10 @@ public class Chamado {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Chamado [ID=" + id + ", Bairro=" + bairro + ", Urgência=" + nivelDeUrgencia + ", Status=" + status + "]";
     }
 }
