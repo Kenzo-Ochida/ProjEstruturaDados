@@ -16,7 +16,7 @@ public class Fila{
     }
 
     public boolean isFull(){
-        return quantidade == comuns.lenght;
+        return quantidade == comuns.length;
     }
 
     public void enqueue(Chamado comum){
