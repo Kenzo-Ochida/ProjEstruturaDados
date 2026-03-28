@@ -2,8 +2,11 @@ import java.util.ArrayList;
 
 public class Main{
     public static void main(String[] args) {
-        ArrayList<Chamado> ocorrencia = new ArrayList<>(50);
-        ArrayList<Chamado> historico = new ArrayList<>();
+
+        static ArrayList<Chamado> ocorrencia = new ArrayList<>(50); // tudo entra por aqui
+        static ArrayList<Chamado> historico = new ArrayList<>(); // mostra todos os chamados
+        static ArrayList<Chamado> ativos = new ArrayList<>(50); // so os ativos
+
         Pilha pilha = new Pilha(30);
         Fila fila = new Fila(30);
 
