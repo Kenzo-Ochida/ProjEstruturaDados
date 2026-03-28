@@ -92,10 +92,10 @@ public class MainK {
 
             if (!pilha.isEmpty()) {
                 c = pilha.pop();
-                System.out.println("Urgente: " + c.getId());
+                System.out.println("O chamado urgente: " + c.getId() + " está sendo atendido");
             } else {
                 c = fila.dequeue();
-                System.out.println("Comum: " + c.getId());
+                System.out.println("O chamado comum: " + c.getId() + " está sendo atendido");
             }
 
             if (c != null) {
