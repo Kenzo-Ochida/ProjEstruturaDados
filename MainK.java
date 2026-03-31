@@ -9,16 +9,19 @@ public class MainK {
     static Fila fila = new Fila(30);
 
     public static void main(String[] args) {
-        adicionarChamado(new Chamado(10, "PRIMEIRO", "Vazamento", 5, "ABERTO"));
-        adicionarChamado(new Chamado(2, "Centro", "Poste apagado", 3, "ABERTO"));
-        adicionarChamado(new Chamado(3, "Vila Nova", "Buraco", 4, "ABERTO"));
-        adicionarChamado(new Chamado(4, "Centro", "Lixo", 2, "ABERTO"));
-        adicionarChamado(new Chamado(5, "São José", "Semáforo", 5, "ABERTO"));
-        adicionarChamado(new Chamado(6, "Vila Nova", "Árvore caída", 4, "ABERTO"));
-        adicionarChamado(new Chamado(7, "Industrial", "Esgoto", 5, "ABERTO"));
-        adicionarChamado(new Chamado(8, "Centro", "Mato alto", 2, "ABERTO"));
-        adicionarChamado(new Chamado(9, "Alvorada", "Sinalização", 3, "ABERTO"));
-        adicionarChamado(new Chamado(10, "ULTIMO", "Animal morto", 4, "ABERTO"));
+        adicionarChamado(new Chamado(1, "Centro", "Lixo", 2, "ABERTO"));
+        adicionarChamado(new Chamado(2, "Vila Nova", "Buraco", 3, "ABERTO"));
+        adicionarChamado(new Chamado(3, "Industrial", "Incêndio", 5, "ABERTO"));
+        adicionarChamado(new Chamado(4, "Centro", "Poste apagado", 2, "ABERTO"));
+        adicionarChamado(new Chamado(5, "Alvorada", "Sinalização", 3, "ABERTO"));
+        adicionarChamado(new Chamado(6, "São José", "Acidente", 5, "ABERTO"));
+        adicionarChamado(new Chamado(7, "Centro", "Mato alto", 1, "ABERTO"));
+        adicionarChamado(new Chamado(8, "Industrial", "Esgoto", 2, "ABERTO"));
+        adicionarChamado(new Chamado(9, "Vila Nova", "Árvore caída", 3, "ABERTO"));
+        adicionarChamado(new Chamado(10, "Centro", "Explosão", 4, "ABERTO"));
+        adicionarChamado(new Chamado(11, "Alvorada", "Lixo", 2, "ABERTO"));
+        adicionarChamado(new Chamado(12, "Centro", "Buraco", 3, "ABERTO"));
+        adicionarChamado(new Chamado(13, "São José", "Mato alto", 1, "ABERTO"));
 
         System.out.println("=== FILTRO ===");
         filtro();
