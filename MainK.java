@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class MainK {
-
     static ArrayList<Chamado> ocorrencia = new ArrayList<>(50);
     static ArrayList<Chamado> historico = new ArrayList<>();
     static ArrayList<Chamado> ativos = new ArrayList<>(50);
@@ -10,7 +9,6 @@ public class MainK {
     static Fila fila = new Fila(30);
 
     public static void main(String[] args) {
-
         adicionarChamado(new Chamado(10, "PRIMEIRO", "Vazamento", 5, "ABERTO"));
         adicionarChamado(new Chamado(2, "Centro", "Poste apagado", 3, "ABERTO"));
         adicionarChamado(new Chamado(3, "Vila Nova", "Buraco", 4, "ABERTO"));
@@ -24,14 +22,15 @@ public class MainK {
 
         System.out.println("=== FILTRO ===");
         filtro();
-        System.out.println("\n=== HISTÓRICO ===");// !!!!!!!!!!!!!!!!!!!!
-        mostrarHistorico(); // !!!!!!!!!!!!!!!!!!!!
+
+        System.out.println("\n=== HISTÓRICO ===");
+        mostrarHistorico();
 
         System.out.println("\n=== ATENDIMENTO ===");
         atender();
-        System.out.println("\n=== HISTÓRICO ===");// !!!!!!!!!!!!!!!!!!!!
-        mostrarHistorico(); // !!!!!!!!!!!!!!!!!!!!
 
+        System.out.println("\n=== HISTÓRICO ===");
+        mostrarHistorico();
 
         System.out.println("\n=== FINALIZAÇÃO ===");
         finalizar();
@@ -46,7 +45,6 @@ public class MainK {
         rankingBairros();
     }
 
-    // ✅ Validação + inserção
     public static void adicionarChamado(Chamado c) {
         if (c == null) return;
 
@@ -70,7 +68,6 @@ public class MainK {
         return false;
     }
 
-    // ✅ Filtro
     public static void filtro() {
         for (Chamado c : ocorrencia) {
             if (c.getNivelDeUrgencia() >= 4) {
@@ -84,10 +81,8 @@ public class MainK {
         }
     }
 
-    // ✅ Atendimento correto
     public static void atender() {
         while (!pilha.isEmpty() || !fila.isEmpty()) {
-
             Chamado c;
 
             if (!pilha.isEmpty()) {
@@ -105,7 +100,6 @@ public class MainK {
         }
     }
 
-    // ✅ Finalização
     public static void finalizar() {
         for (Chamado c : ativos) {
             c.setStatus("FINALIZADO");
@@ -114,7 +108,6 @@ public class MainK {
         ativos.clear();
     }
 
-    // ✅ Atualiza histórico
     public static void atualizarHistorico(int id, String status) {
         for (Chamado c : historico) {
             if (c.getId() == id) {
@@ -124,16 +117,12 @@ public class MainK {
         }
     }
 
-    // ✅ Mostrar histórico
     public static void mostrarHistorico() {
         for (Chamado c : historico) {
             System.out.println(c.getId() + " | " + c.getBairro() + " | " + c.getStatus());
         }
     }
 
-    // ================= RELATÓRIOS =================
-
-    // ✅ Total por bairro
     public static void totalPorBairro() {
         System.out.println("\nTotal por bairro:");
 
@@ -157,7 +146,6 @@ public class MainK {
         }
     }
 
-    // ✅ Média de urgência
     public static void mediaUrgencia() {
         double soma = 0;
 
@@ -169,7 +157,6 @@ public class MainK {
         System.out.printf("Média de urgência: %.2f\n", media);
     }
 
-    // ✅ Pendentes
     public static void chamadosPendentes() {
         System.out.println("\nPendentes:");
 
@@ -180,9 +167,7 @@ public class MainK {
         }
     }
 
-    // ✅ Ranking com ordenação manual (Selection Sort)
     public static void rankingBairros() {
-
         ArrayList<String> bairros = new ArrayList<>();
         ArrayList<Integer> contagem = new ArrayList<>();
 
@@ -198,7 +183,6 @@ public class MainK {
             }
         }
 
-        // Selection Sort (decrescente)
         for (int i = 0; i < contagem.size(); i++) {
             int max = i;
 
@@ -208,7 +192,6 @@ public class MainK {
                 }
             }
 
-            // troca
             int tempC = contagem.get(i);
             contagem.set(i, contagem.get(max));
             contagem.set(max, tempC);
